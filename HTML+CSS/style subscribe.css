@@ -1,0 +1,111 @@
+
+body {
+  font-family: "Host Grotesk", sans-serif;
+  background-image:url(./Backgroundimg.jpg);
+  align-items: center;
+}
+.form {
+margin-top: 200px;
+ width: 100%;
+ height: 900px;
+ color: white;
+ font-size: 2rem;
+ text-align: center;
+ 
+}
+h1{
+color: white;
+ font-size: 4rem;
+ text-align: center;
+}
+.button {
+  width: 500px;
+  font-size: 2.5rem;
+  margin-top: 50px;
+  border: solid black;
+  color: white;
+  background-color: black;
+}
+input[type=text] {
+  width: 300px;
+  height: 40px;
+  font-size: 1.5rem;
+  border: solid black;
+  margin-top: 10px;
+  display: inline-block;
+  
+}
+input[type=checkbox] {
+  width: 20px;
+  height: 15px;
+  font-size: 1.5rem;
+  border: solid black;
+  display: inline-block;
+  margin-top: 60px;
+}
+#Gender {
+  width: 305px;
+  height: 40px;
+  font-size: 1.5rem;
+  border: solid black;
+  margin-top: 10px;
+  display: inline-block;
+ 
+
+}
+input[type=date] {
+  width: 300px;
+  height: 40px;
+  font-size: 1.5rem;
+  border: solid black;
+  margin-top: 10px;
+  display: inline-block;
+}
+#submit {
+font-size: 1.2rem;
+color: darkgrey;
+}
+
+#Country {
+  width: 305px;
+  height: 40px;
+  font-size: 1.5rem;
+  border: solid black;
+  margin-top: 10px;
+  display: inline-block;
+}
+b {
+
+   width: 250px;
+   display: inline-block;
+   
+}
+label {
+  display: inline;
+
+}
+div > p {
+  font-size: 2rem;
+  display: inline-block;
+  font-weight: bold;
+ }
+ a {
+  text-decoration: none;
+  color: grey;
+  margin-left: 10px;
+  outline-offset: 2px solid currentColor;
+}
+.logo {
+  display: inline-block;
+  position: relative;
+  top: 40px;
+  font-size: 2rem;
+  margin-left: 50px;
+  font-family:"Lobster", serif;
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  width: 200px;
+  text-align: center;
+  height: 200px;
+}
