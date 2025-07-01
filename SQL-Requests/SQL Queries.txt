@@ -1,0 +1,72 @@
+
+
+'Simple selection"
+SELECT * FROM depts
+
+
+"Delete"
+DELETE FROM depts
+WHERE department = 'B'
+
+
+"Insert"
+INSERT INTO employees(
+first_name,
+last_name,
+birth_date,
+hire_date,
+salary
+)
+VALUES(
+'Sammy',
+'Smith',
+'1990-11-03',
+'2010-01-01',
+100
+)
+
+
+"Inner join"
+SELECT cd.bookings.starttime, cd.facilities.name
+FROM cd.facilities
+INNER JOIN cd.bookings ON
+cd.bookings.facid = cd.facilities.facid
+WHERE cd.facilities.facid IN (0,1) 
+AND cd.bookings.starttime >= '2012-09-21'
+AND cd.bookings.starttime < '2012-09-22'
+
+
+"Left join"
+
+SELECT film.film_id, inventory.inventory_id
+FROM film
+LEFT JOIN inventory
+ON inventory.film_id=film.film_id
+
+
+
+"Group by and Order by"
+SELECT facid, SUM(slots) AS total_slots
+FROM cd.bookings
+GROUP BY facid
+HAVING SUM(slots) >1000
+ORDER BY SUM(slots) DESC
+
+
+"Create Table"
+CREATE TABLE employees(
+emp_id SERIAL PRIMARY KEY,
+first_name VARCHART(50) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+birth_date DATE CHECK (birth_date > '1900-01-01'),
+hire_date DATE CHECK(hire_date > birth_date),
+salary INTEGER CHECK(salary > 0)
+
+
+"Select with LIKE and AND"
+SELECT cd.bookings.starttime, cd.members.surname, cd.members.firstname
+FROM cd.bookings
+INNER JOIN cd.members ON
+cd.bookings.memid = cd.members.memid
+WHERE cd.members.surname LIKE 'Farrell' AND 
+cd.members.firstname LIKE 'David' 
