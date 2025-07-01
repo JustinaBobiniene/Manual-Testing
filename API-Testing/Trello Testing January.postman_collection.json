@@ -1,0 +1,702 @@
+{
+	"info": {
+		"_postman_id": "c1ef3556-743e-46b0-b082-40af2c2a7b72",
+		"name": "Trello Testing January",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39252893"
+	},
+	"item": [
+		{
+			"name": "Add sticker to a  wrong place of acard",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sticker is added successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/cards/{{card_id}}/stickers?image=taco-cool&top=-600000&left=6000000&zIndex=0&key={{Key}}&token={{Token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{card_id}}",
+						"stickers"
+					],
+					"query": [
+						{
+							"key": "image",
+							"value": "taco-cool"
+						},
+						{
+							"key": "top",
+							"value": "-600000"
+						},
+						{
+							"key": "left",
+							"value": "6000000"
+						},
+						{
+							"key": "zIndex",
+							"value": "0"
+						},
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						},
+						{
+							"key": "name",
+							"value": "Seima",
+							"disabled": true
+						},
+						{
+							"key": "cards",
+							"value": "{{card_id}}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete sticker from a card using wrong ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sticker is deleted successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/cards/{{card_id}}/stickers/6799f545e730cd7590ad2?key={{Key}}&token={{Token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{card_id}}",
+						"stickers",
+						"6799f545e730cd7590ad2"
+					],
+					"query": [
+						{
+							"key": "image",
+							"value": "taco-cool",
+							"disabled": true
+						},
+						{
+							"key": "top",
+							"value": "60",
+							"disabled": true
+						},
+						{
+							"key": "left",
+							"value": "60",
+							"disabled": true
+						},
+						{
+							"key": "zIndex",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						},
+						{
+							"key": "stickers",
+							"value": "6799f545e730cd7590ad21a7",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add sticker with wrong ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sticker is added successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/cards/{{card_id}}/stickers?image=taco-blabla&top=60&left=60&zIndex=0&key={{Key}}&token={{Token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{card_id}}",
+						"stickers"
+					],
+					"query": [
+						{
+							"key": "image",
+							"value": "taco-blabla"
+						},
+						{
+							"key": "top",
+							"value": "60"
+						},
+						{
+							"key": "left",
+							"value": "60"
+						},
+						{
+							"key": "zIndex",
+							"value": "0"
+						},
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST sticker with PATCH request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sticker is added successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/cards/{{card_id}}/stickers?image=taco-cool&top=60&left=60&zIndex=0&key={{Key}}&token={{Token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{card_id}}",
+						"stickers"
+					],
+					"query": [
+						{
+							"key": "image",
+							"value": "taco-cool"
+						},
+						{
+							"key": "top",
+							"value": "60"
+						},
+						{
+							"key": "left",
+							"value": "60"
+						},
+						{
+							"key": "zIndex",
+							"value": "0"
+						},
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add image as a sticker",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Sticker is added successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"top\": 0.5,\r\n  \"left\": 0.5,\r\n  \"rotate\": 0,\r\n  \"zIndex\": 1,\r\n  \"image\": \"https://drive.google.com/file/d/1WfvTEkMiwdltdOE_tzvLQ7ljEljI9il9/view?usp=sharing\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/1/cards/{{card_id}}/stickers?key={{Key}}&token={{Token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{card_id}}",
+						"stickers"
+					],
+					"query": [
+						{
+							"key": "image",
+							"value": "taco-cool",
+							"disabled": true
+						},
+						{
+							"key": "top",
+							"value": "-600000",
+							"disabled": true
+						},
+						{
+							"key": "left",
+							"value": "6000000",
+							"disabled": true
+						},
+						{
+							"key": "zIndex",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete not existing checklist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Checklist is deleted successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/checklist/{{checklist_id}}?key={{Key}}&token={{Token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"checklist",
+						"{{checklist_id}}"
+					],
+					"query": [
+						{
+							"key": "idCard",
+							"value": "{{card_id}}",
+							"disabled": true
+						},
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crete check item",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/checklists/{{checklist_id}}/checkItems?name=What to do?&key={{Key}}&token={{Token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"checklists",
+						"{{checklist_id}}",
+						"checkItems"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "What to do?"
+						},
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add check item to not existing checklist",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/checklists/{{checklist_id}}/checkItems?name=What to do?&key={{Key}}&token={{Token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"checklists",
+						"{{checklist_id}}",
+						"checkItems"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "What to do?"
+						},
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete already deleted checklist",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/checklist/{{checklist_id}}?key={{Key}}&token={{Token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"checklist",
+						"{{checklist_id}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete already deleted check item",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/checklists/{{checklist_id}}/checkItems/679a197388e9c7f47f859956?&key={{Key}}&token={{Token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"checklists",
+						"{{checklist_id}}",
+						"checkItems",
+						"679a197388e9c7f47f859956"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all check items of the checklist",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/checklists/{{checklist_id}}/checkItems?&key={{Key}}&token={{Token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"checklists",
+						"{{checklist_id}}",
+						"checkItems"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null
+						},
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update checklist using ID with TYPO",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/checklists/{{checklist_id}}?key={{Key}}&token={{Token}}&name=Seima2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"checklists",
+						"{{checklist_id}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						},
+						{
+							"key": "name",
+							"value": "Seima2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add sticker to a card (positive)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/1/cards/{{card_id}}/stickers?image=taco-cool&top=60&left=60&zIndex=0&key={{Key}}&token={{Token}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{card_id}}",
+						"stickers"
+					],
+					"query": [
+						{
+							"key": "image",
+							"value": "taco-cool"
+						},
+						{
+							"key": "top",
+							"value": "60"
+						},
+						{
+							"key": "left",
+							"value": "60"
+						},
+						{
+							"key": "zIndex",
+							"value": "0"
+						},
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
